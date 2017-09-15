@@ -16,6 +16,8 @@ public class Application {
     private static final String AUTH_LINK = "https://api.github.com/authorizations";
     private static final String DELETE_LINK = "https://api.github.com/repos/danteg233/";
     private static final String REPOSITORY_NAME = "test";
+    private static final String USER_LINK = "https://api.github.com/user";
+    private static final String GIST_LINK = "https://api.github.com/gists";
 
     private static HttpHeaders getHeaders(){
         String username_password = "danteg233@hotmail.com:";
@@ -30,7 +32,7 @@ public class Application {
     public void logIn(){
         HttpEntity<String> request = new HttpEntity<>(getHeaders());
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<String> response = restTemplate.exchange("https://api.github.com/user", HttpMethod.GET, request, String.class);
+        ResponseEntity<String> response = restTemplate.exchange(USER_LINK, HttpMethod.GET, request, String.class);
         Assert.assertEquals(response.getStatusCodeValue(), 200);
     }
 
@@ -47,6 +49,10 @@ public class Application {
         RestTemplate template = new RestTemplate();
         HttpEntity<String> request = new HttpEntity<>(getHeaders());
         template.exchange(DELETE_LINK + REPOSITORY_NAME, HttpMethod.DELETE, request, String.class);
+    }
+
+    @Test
+    public void createGist(){
 
     }
 
