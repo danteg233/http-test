@@ -1,4 +1,6 @@
-package rest;
+package rest.model;
+
+import java.util.Arrays;
 
 public class Gist {
     private String description;
@@ -6,6 +8,12 @@ public class Gist {
     private File[] files;
 
     public Gist(){
+    }
+
+    public Gist(String description, boolean isPublic, File[] files) {
+        this.description = description;
+        this.isPublic = isPublic;
+        this.files = files;
     }
 
     public String getDescription() {
@@ -30,5 +38,14 @@ public class Gist {
 
     public void setFiles(File[] files) {
         this.files = files;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "description='" + description + '\'' +
+                ", public=" + isPublic +
+                ", files={" + Arrays.toString(files) + '}'+
+                '}';
     }
 }

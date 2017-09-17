@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1">
+    <test name="HTTP test">
+        <parameter name="userName" value="danteg233"/>
+        <parameter name="pass" value="alexshepardn1n2n3"/>
+        <parameter name="repositoryName" value="test"/>
+        <parameter name="description" value="some description for GIST"/>
+        <parameter name="isPublic" value="true"/>
+        <parameter name="files" value="file1.txt, file2.txt, file3.txt"/>
+        <parameter name="content" value="new content"/>
+        <classes>
+            <class name="rest.Application"/>
+        </classes>
+    </test>
+
+</suite>
