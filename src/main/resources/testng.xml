@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1">
+    <test name="HTTP test">
+        <parameter name="groupName" value="test group "/>
+        <parameter name="templateName" value="test temp"/>
+        <parameter name="capacity" value="1"/>
+        <parameter name="companyBusinessId" value="1"/>
+        <parameter name="locationBusinessId" value="1"/>
+        <parameter name="name" value="Some name1230"/>
+        <parameter name="startTime" value="12:00"/>
+        <parameter name="levelName" value="level 1"/>
+        <classes>
+            <class name="rest.CreateActiveTemplateTest"/>
+            <class name="rest.CreateDraftTemplateTest"/>
+            <class name="rest.CreateTemplateWithSeparateLevel"/>
+        </classes>
+    </test>
+
+</suite>
